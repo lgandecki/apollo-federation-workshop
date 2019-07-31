@@ -1,0 +1,57 @@
+{
+  "name": "federation-workshop",
+  "version": "1.0.0",
+  "description": "Apollo Federation Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start:1:final:products": "node ./src/exercises/1/final/products/index.js",
+    "start:1:gateway": "node ./src/exercises/1/final/gateway.js",
+    "start:1:toBeChanged:products": "node ./src/exercises/1/toBeChanged/products/index.js"
+  },
+  "devDependencies": {
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "13.2.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-prettier": "3.1.0",
+    "husky": "3.0.2",
+    "jest": "24.8.0",
+    "lint-staged": "9.2.1",
+    "prettier": "1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgandecki/apollo-federation-workshop.git"
+  },
+  "keywords": [
+    "Apollo",
+    "Federation",
+    "Workshop"
+  ],
+  "author": "Łukasz Gandecki <lgandecki@thebrain.pro>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgandecki/apollo-federation-workshop/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && jest"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "homepage": "https://github.com/lgandecki/apollo-federation-workshop#readme",
+  "dependencies": {
+    "@apollo/federation": "0.8.0",
+    "@apollo/gateway": "0.8.0",
+    "apollo-server": "2.8.0",
+    "federation-testing-tool": "1.2.0",
+    "graphql": "14.4.2",
+    "graphql-tag": "2.10.1"
+  }
+}
