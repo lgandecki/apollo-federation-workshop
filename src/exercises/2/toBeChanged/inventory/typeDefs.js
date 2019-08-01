@@ -10,6 +10,7 @@ const { gql } = require("apollo-server");
 
 // TODO make the MD with an example ?
 
-// 📜  https://www.apollographql.com/docs/apollo-server/federation/core-concepts/#referencing-external-types
+// 📜 https://www.apollographql.com/docs/apollo-server/federation/federation-spec/#external
+// 📜 More in depth: https://www.apollographql.com/docs/apollo-server/federation/core-concepts/#referencing-external-types
 
 exports.typeDefs = gql``;
