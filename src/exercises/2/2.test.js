@@ -1,5 +1,6 @@
 // comment out the first require statement and uncomment the second one to start the exercise
-// For this test to pass you have to edit only ./toBeChanged/inventory/resolvers.js
+// For this test to pass you have to edit only ./toBeChanged/inventory/typeDefs.js
+// 2) ./toBeChanged/inventory/resolvers.js
 
 const { inventory, products } = require("./final");
 // const { inventory, products } = require("./toBeChanged");
@@ -41,9 +42,4 @@ test("Proper typeDefs for the extended Product in the Inventory service, allowin
   const result = await executeGraphql({ query, services });
 
   expect(result.errors && result.errors[0]).toBeUndefined();
-
-  const { topProducts } = result.data;
-  expect(topProducts.find(p => p.id === "1").inStock).toEqual(true);
-  expect(topProducts.find(p => p.id === "2").inStock).toEqual(false);
-  expect(topProducts.find(p => p.id === "3").inStock).toEqual(true);
 });
