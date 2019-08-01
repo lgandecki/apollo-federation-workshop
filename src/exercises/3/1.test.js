@@ -45,7 +45,7 @@ test.skip("Can use weight and price from Products service to estimate shipping c
   expect(result.errors && result.errors[0]).toBeUndefined();
 
   const { topProducts } = result.data;
-  expect(topProducts.find(p => p.id === "1").inStock).toEqual(true);
-  expect(topProducts.find(p => p.id === "2").inStock).toEqual(false);
-  expect(topProducts.find(p => p.id === "3").inStock).toEqual(true);
+  expect(topProducts.find(p => p.id === "1").shippingEstimate).toEqual(true);
+  expect(topProducts.find(p => p.id === "2").shippingEstimate).toEqual(false);
+  expect(topProducts.find(p => p.id === "3").shippingEstimate).toEqual(true);
 });
