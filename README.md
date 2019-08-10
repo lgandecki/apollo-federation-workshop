@@ -24,7 +24,7 @@ If you have trouble with any of these, learn more about the PATH environment var
 ## Setup
 
 ```shell
-git clone https://github.com/lgandecki/apollo-federation-workshop
+git clone https://github.com/lgandecki/apollo-federation-workshop.git
 
 cd apollo-federation-workshop
 npm install
