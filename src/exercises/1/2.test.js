@@ -1,4 +1,6 @@
-// comment out the first require statement and uncomment the second one to start the exercise
+// 1/2.test.js
+
+// Comment out the first require statement and uncomment the second one to start the exercise
 // For this test to pass you have to edit only ./toBeChanged/products/resolvers.js
 
 const { resolvers, typeDefs } = require("./final/products");

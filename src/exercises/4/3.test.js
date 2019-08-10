@@ -5,8 +5,8 @@
 
 // For this test to pass you have to edit only toBeChanged/accounts/resolvers.js file.
 
-const exerciseStarted = false;
-// const exerciseStarted = true;
+const exerciseStarted = false; // 🐨
+// const exerciseStarted = true; // 🐨
 
 // Do not change anything in the lines below!
 //

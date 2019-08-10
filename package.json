@@ -4,7 +4,7 @@
   "description": "Apollo Federation Workshop",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "start:1:final:products": "node ./src/exercises/1/final/products/index.js",
     "start:1:gateway": "node ./src/exercises/1/final/gateway.js",
     "start:1:toBeChanged:products": "node ./src/exercises/1/toBeChanged/products/index.js",

@@ -5,8 +5,8 @@
 // For this test to pass you have to edit only toBeChanged/reviews/typeDefs.js file.
 // Look for the comments marked as (test 2) at the bottom of the file for instructions.
 
-const exerciseStarted = false;
-// const exerciseStarted = true;
+const exerciseStarted = false; // 🐨
+// const exerciseStarted = true; // 🐨
 
 // Do not change anything in the lines below!
 //

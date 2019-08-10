@@ -1,8 +1,10 @@
+// 2/1.test.js
+
 // comment out the first require statement and uncomment the second one to start the exercise
 // For this test to pass you have to edit only ./toBeChanged/inventory/typeDefs.js
 
-const { inventory, products } = require("./final");
-// const { inventory, products } = require("./toBeChanged");
+const { inventory, products } = require("./final"); // 🐨
+// const { inventory, products } = require("./toBeChanged"); // 🐨
 
 // Do not change anything in the lines below!
 // Also - don't worry about understanding what's going on below, at least for now.
