@@ -7,7 +7,13 @@
     "test": "jest",
     "start:1:final:products": "node ./src/exercises/1/final/products/index.js",
     "start:1:gateway": "node ./src/exercises/1/final/gateway.js",
-    "start:1:toBeChanged:products": "node ./src/exercises/1/toBeChanged/products/index.js"
+    "start:1:toBeChanged:products": "node ./src/exercises/1/toBeChanged/products/index.js",
+    "start:4:final:accounts": "node ./src/exercises/4/final/accounts/start.js",
+    "start:4:final:inventory": "node ./src/exercises/4/final/inventory/start.js",
+    "start:4:final:products": "node ./src/exercises/4/final/products/start.js",
+    "start:4:final:reviews": "node ./src/exercises/4/final/reviews/start.js",
+    "start:4:gateway": "node ./src/exercises/4/final/gateway.js",
+    "start:4:toBeChanged:accounts": "node ./src/exercises/4/toBeChanged/accounts/start.js"
   },
   "devDependencies": {
     "eslint": "6.1.0",

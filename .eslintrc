@@ -3,7 +3,8 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off"
   },
   "overrides": [
     {
