@@ -4,6 +4,7 @@ Having `products` and `inventory` services connected, we want to use the `weight
 
 You will be a bit more on your own in this exercise, try to reuse the things you learned in the previous two exercises.
 
+This is what we want to implement:
 ![dataflow](./3.png)
 
 

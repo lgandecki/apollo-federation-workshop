@@ -4,7 +4,7 @@ Having `products` service ready, let's create an inventory service, that will ex
 
 The outcome of this exercise should be a functionality that allows user to query `topProducts` from `products` service but having the `inStock` information added to it from `inventory` service.
 
-Take a loot at this chart to understand what we want to achieve:
+Take a loot at this chart to understand what we want to achieve, we are dealing with steps 4 and 5 now.
 
 ![dataflow](./2.png)
 
