@@ -7,6 +7,7 @@
 // This is not "The GraphQL way". We will have to change:
 // 1) ./toBeChanged/reviews/typeDefs.js (look for the hints marked test 1)
 // 2) ./toBeChanged/accounts/typeDefs.js
+// 3) ./toBeChanged/accounts/resolvers.js
 // Note, the reviews resolvers can stay exactly as is, even though we are connecting it to the rest of the graph!
 // How cool is that?
 

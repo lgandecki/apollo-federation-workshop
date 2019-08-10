@@ -9,6 +9,6 @@ exports.typeDefs = gql`
     id: ID!
     name: String
     username: String
-    email: String
+    birthDate: String
   }
 `;
