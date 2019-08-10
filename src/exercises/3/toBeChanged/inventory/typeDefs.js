@@ -17,8 +17,5 @@ exports.typeDefs = gql`
   extend type Product @key(fields: "id") {
     id: ID! @external
     inStock: Boolean
-    shippingEstimate: Float @requires(fields: "weight price")
-    weight: Int @external
-    price: Int @external
   }
 `;
