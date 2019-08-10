@@ -11,8 +11,7 @@ If you or your company is interested in having me do the workshop for you, pleas
 - [NodeJS][node] v8 or greater
 - [yarn][yarn] v1 or greater (or [npm][npm] v6 or greater)
 
-All of these must be available in your `PATH`. To verify things are set up
-properly, you can run this:
+All of these must be available in your `PATH`. To verify things are set up properly, you can run this:
 
 ```shell
 git --version
@@ -20,9 +19,7 @@ node --version
 yarn --version # or npm --version
 ```
 
-If you have trouble with any of these, learn more about the PATH environment
-variable and how to fix it here for [windows][win-path] or
-[mac/linux][mac-path].
+If you have trouble with any of these, learn more about the PATH environment variable and how to fix it here for [windows][win-path] or [mac/linux][mac-path].
 
 ## Setup
 
@@ -84,8 +81,6 @@ You might recognize that the format looks suspiciously similar to the [Kent C Do
 [node]: https://nodejs.org
 [git]: https://git-scm.com/
 [yarn]: https://yarnpkg.com/
-[win-path]:
-  https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
-
+[win-path]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
 [mac-path]: http://stackoverflow.com/a/24322978/971592
 
