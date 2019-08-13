@@ -42,7 +42,14 @@ test("Can use weight and price from Products service to estimate shipping costs 
   expect(result.errors && result.errors[0]).toBeUndefined();
 
   const { topProducts } = result.data;
-  expect(topProducts.find(p => p.id === "1").shippingEstimate).toEqual(50);
-  expect(topProducts.find(p => p.id === "2").shippingEstimate).toEqual(0);
-  expect(topProducts.find(p => p.id === "3").shippingEstimate).toEqual(25);
+
+  expect(topProducts.find(p => p.id === "1")).toMatchObject({
+    shippingEstimate: 50
+  });
+  expect(topProducts.find(p => p.id === "2")).toMatchObject({
+    shippingEstimate: 0
+  });
+  expect(topProducts.find(p => p.id === "3")).toMatchObject({
+    shippingEstimate: 25
+  });
 });

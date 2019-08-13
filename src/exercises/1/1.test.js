@@ -58,5 +58,5 @@ test("Can reference the Product type from another service", async () => {
   const result = await executeGraphql({ query, services });
 
   expect(result.errors).toBeUndefined();
-  expect(result.data.topProducts[0].id).toEqual("1");
+  expect(result.data.topProducts[0]).toMatchObject({ id: "1" });
 });
