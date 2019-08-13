@@ -21,20 +21,7 @@ const gql = require("graphql-tag");
 const { executeGraphql } = require("federation-testing-tool");
 
 test("Correct __resolveReference implementation for Inventory Product definition that allows looking up the inStock field", async () => {
-  const services = [
-    {
-      inventory: {
-        ...inventory,
-        underTest: true
-      }
-    },
-    {
-      products: {
-        ...products,
-        underTest: true
-      }
-    }
-  ];
+  const services = [{ inventory }, { products }];
 
   const query = gql`
     query topProducts {
