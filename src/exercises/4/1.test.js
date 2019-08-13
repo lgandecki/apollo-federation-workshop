@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-expressions,global-require */
 
-// comment out the first assignment of exerciseStarted, uncomment the second one to start the exercise
+// !!! Comment out line number 5 below and uncomment the line number 6 to start the exercise.
+
+const exerciseStarted = false; // 🐨
+// const exerciseStarted = true; // 🐨
 
 // Take a look at the expectedProductDataShape const, and the test that's already passing.
 // To have the data in the shape we want, we currently have to execute two separate queries.
@@ -12,9 +15,6 @@
 // How cool is that?
 
 // If you don't know where to start, drive it with tests - the errors should tell you what to do next.
-
-const exerciseStarted = false; // 🐨
-// const exerciseStarted = true; // 🐨
 
 // Do not change anything in the lines below!
 //

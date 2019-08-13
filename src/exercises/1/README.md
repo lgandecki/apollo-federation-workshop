@@ -8,7 +8,7 @@ What we will be working through is the first step (lines 1, 2, 3) towards using 
 
 ### How to start
 
-Open ./1.test.js , comment line 6 and uncomment line 7.
+Open ./1.test.js , comment line 5 and uncomment line 6.
 Make sure that either:
 - jest is running `npm test`
 - [wallabyjs](https://wallabyjs.com/docs/intro/install.html#jetbrains-ides) is running ([starting recently there is no need for a separate configuration file!](https://wallabyjs.com/docs/intro/config.html#automatic-configuration)). Highly recommended!

@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-expressions,global-require */
 
-// comment out the first assignment of exerciseStarted, uncomment the second one to start the exercise
-
-// For this test to pass you have to edit only toBeChanged/reviews/typeDefs.js file.
-// Look for the comments marked as (test 2) at the bottom of the file for instructions.
+// !!! Comment out line number 5 below and uncomment the line number 6 to start the exercise.
 
 const exerciseStarted = false; // 🐨
 // const exerciseStarted = true; // 🐨
+
+// For this test to pass you have to edit only toBeChanged/reviews/typeDefs.js file.
+// Look for the comments marked as (test 2) at the bottom of the file for instructions.
 
 // Do not change anything in the lines below!
 //
