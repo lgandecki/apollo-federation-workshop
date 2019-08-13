@@ -70,5 +70,5 @@ test("Can resolve the Product data in the Product service to be used by other se
   const result = await executeGraphql({ query, services });
 
   expect(result.errors && result.errors[0]).toBeUndefined();
-  expect(result.data.topProducts[0].shippingEstimate).toEqual(100);
+  expect(result.data.topProducts[0]).toMatchObject({ shippingEstimate: 100 });
 });

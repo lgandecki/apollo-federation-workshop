@@ -37,7 +37,7 @@ test("Correct __resolveReference implementation for Inventory Product definition
   expect(result.errors && result.errors[0]).toBeUndefined();
 
   const { topProducts } = result.data;
-  expect(topProducts.find(p => p.id === "1").inStock).toEqual(true);
-  expect(topProducts.find(p => p.id === "2").inStock).toEqual(false);
-  expect(topProducts.find(p => p.id === "3").inStock).toEqual(true);
+  expect(topProducts.find(p => p.id === "1")).toMatchObject({ inStock: true });
+  expect(topProducts.find(p => p.id === "2")).toMatchObject({ inStock: false });
+  expect(topProducts.find(p => p.id === "3")).toMatchObject({ inStock: true });
 });
