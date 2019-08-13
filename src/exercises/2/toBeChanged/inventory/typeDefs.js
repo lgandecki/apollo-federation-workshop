@@ -8,8 +8,6 @@ const { gql } = require("apollo-server");
 
 // 🐨 Since id is defined in another service, it has to be annotated as external here.
 
-// TODO make the MD with an example ?
-
 // 📜 https://www.apollographql.com/docs/apollo-server/federation/federation-spec/#external
 // 📜 More in depth: https://www.apollographql.com/docs/apollo-server/federation/core-concepts/#referencing-external-types
 

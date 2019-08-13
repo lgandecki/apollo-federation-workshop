@@ -7,7 +7,7 @@ module.exports = {
     // 💰 if we used external service to resolve the product by id the code could look like this:
     //   Product: {
     //     __resolveReference: object => products.getById(object.id)
-    //     }
+    //     },
     // In our case we have to find the product in the products array.
     Query: {
       topProducts(_, args) {

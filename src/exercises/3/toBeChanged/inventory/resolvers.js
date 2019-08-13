@@ -7,7 +7,7 @@ exports.resolvers = {
     // 💰 you can start with this function. Do you have all the required data?
     // shippingEstimate: object => {
     // console.log(object);
-    // }
+    // },
 
     // 💰 Take a look at the shape of the initial object here. Do we have weight and price available to use? Then think about what we return.
     __resolveReference: object => {
