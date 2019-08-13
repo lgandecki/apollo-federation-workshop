@@ -52,7 +52,7 @@ test("Can get the username directly from the reviews service, without breaking t
 
   await executeGraphql({
     query: reviewsQuery,
-    service: [
+    services: [
       {
         products: {
           ...services.products
