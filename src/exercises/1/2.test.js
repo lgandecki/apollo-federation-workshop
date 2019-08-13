@@ -47,15 +47,13 @@ test("Can resolve the Product data in the Product service to be used by other se
     {
       inventory: {
         typeDefs: inventoryTypeDefs,
-        resolvers: inventoryResolvers,
-        underTest: true
+        resolvers: inventoryResolvers
       }
     },
     {
       products: {
         typeDefs,
-        resolvers,
-        underTest: true
+        resolvers
       }
     }
   ];

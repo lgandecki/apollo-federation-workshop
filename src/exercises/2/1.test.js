@@ -21,20 +21,7 @@ const gql = require("graphql-tag");
 const { executeGraphql } = require("federation-testing-tool");
 
 test("Proper typeDefs for the extended Product in the Inventory service, allowing for querying inStock and resolving through Products service", async () => {
-  const services = [
-    {
-      inventory: {
-        ...inventory,
-        underTest: true
-      }
-    },
-    {
-      products: {
-        ...products,
-        underTest: true
-      }
-    }
-  ];
+  const services = [{ inventory }, { products }];
 
   const query = gql`
     query topProducts {

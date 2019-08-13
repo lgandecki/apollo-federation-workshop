@@ -35,13 +35,13 @@ test("Can reference the Product type from another service", async () => {
     {
       inventory: {
         typeDefs: inventoryTypeDefs
+        // Resolvers are automocked by the federation-testing-tool
       }
     },
     {
       products: {
         typeDefs,
-        resolvers,
-        underTest: true
+        resolvers
       }
     }
   ];
@@ -54,6 +54,7 @@ test("Can reference the Product type from another service", async () => {
     }
   `;
 
+  // simulate the GraphQL call going through the Gateway and to the Inventory/Products services.
   const result = await executeGraphql({ query, services });
 
   expect(result.errors).toBeUndefined();

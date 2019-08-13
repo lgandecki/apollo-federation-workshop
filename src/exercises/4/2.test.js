@@ -12,20 +12,12 @@ const exerciseStarted = false; // 🐨
 //
 //
 
-let services;
-
-if (exerciseStarted) {
-  services = require("./toBeChanged");
-} else {
-  services = require("./final");
-}
+const { products, accounts, reviews } = exerciseStarted
+  ? require("./toBeChanged")
+  : require("./final");
 
 const { gql } = require("apollo-server");
 const { executeGraphql } = require("federation-testing-tool");
-
-const service = {
-  ...services.reviews
-};
 
 test("Can get the username directly from the reviews service, without breaking the rest of the graph", async () => {
   const reviewsQuery = gql`
@@ -40,7 +32,7 @@ test("Can get the username directly from the reviews service, without breaking t
 
   const reviewsResult = await executeGraphql({
     query: reviewsQuery,
-    service
+    service: reviews
   });
 
   expect(reviewsResult.errors && reviewsResult.errors[0]).toBeUndefined();
@@ -52,22 +44,6 @@ test("Can get the username directly from the reviews service, without breaking t
 
   await executeGraphql({
     query: reviewsQuery,
-    services: [
-      {
-        products: {
-          ...services.products
-        }
-      },
-      {
-        reviews: {
-          ...services.reviews
-        }
-      },
-      {
-        accounts: {
-          ...services.accounts
-        }
-      }
-    ]
+    services: [{ products }, { reviews }, { accounts }]
   });
 });

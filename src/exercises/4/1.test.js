@@ -20,61 +20,16 @@ const exerciseStarted = false; // 🐨
 //
 //
 
-let services;
-
-if (exerciseStarted) {
-  services = require("./toBeChanged");
-} else {
-  services = require("./final");
-}
+const { inventory, products, accounts, reviews } = exerciseStarted
+  ? require("./toBeChanged")
+  : require("./final");
 
 const { gql } = require("apollo-server");
 const { executeGraphql } = require("federation-testing-tool");
 
-const reviewsService = {
-  ...services.reviews
-};
+const initialServices = [{ inventory }, { products }, { accounts }];
 
-const initialServices = [
-  {
-    inventory: {
-      ...services.inventory
-    }
-  },
-  {
-    products: {
-      ...services.products
-    }
-  },
-  {
-    accounts: {
-      ...services.accounts
-    }
-  }
-];
-
-const finalServices = [
-  {
-    inventory: {
-      ...services.inventory
-    }
-  },
-  {
-    products: {
-      ...services.products
-    }
-  },
-  {
-    accounts: {
-      ...services.accounts
-    }
-  },
-  {
-    reviews: {
-      ...services.reviews
-    }
-  }
-];
+const finalServices = [...initialServices, { reviews }];
 
 const expectedProductDataShape = {
   // These two from Products service
@@ -130,7 +85,7 @@ const expectedProductDataShape = {
 
     const reviewsResult = await executeGraphql({
       query: reviewsQuery,
-      service: reviewsService,
+      service: reviews,
       variables: { productId: productData.id }
     });
 

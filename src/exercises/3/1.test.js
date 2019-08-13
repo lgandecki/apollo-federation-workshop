@@ -26,20 +26,7 @@ const gql = require("graphql-tag");
 const { executeGraphql } = require("federation-testing-tool");
 
 test("Can use weight and price from Products service to estimate shipping costs in the Inventory service", async () => {
-  const services = [
-    {
-      inventory: {
-        ...inventory,
-        underTest: true
-      }
-    },
-    {
-      products: {
-        ...products,
-        underTest: true
-      }
-    }
-  ];
+  const services = [{ inventory }, { products }];
 
   const query = gql`
     query topProducts {
