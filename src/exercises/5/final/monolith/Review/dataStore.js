@@ -1,4 +1,11 @@
-exports.reviews = [
+exports.reviews = {
+  getAllByProductId: productId =>
+    reviewsData.filter(review => review.product.id === productId),
+  getAllByAuthorId: userId =>
+    reviewsData.filter(review => review.authorID === userId)
+};
+
+const reviewsData = [
   {
     id: "1",
     authorID: "1",

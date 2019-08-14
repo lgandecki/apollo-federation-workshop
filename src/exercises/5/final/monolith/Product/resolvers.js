@@ -1,12 +1,12 @@
 exports.resolvers = {
   Query: {
     productById(_, { productId }, { products }) {
-      return products.find(product => product.id === productId);
+      return products.getById(productId);
     }
   },
   Product: {
     reviews(product, _, { reviews }) {
-      return reviews.filter(review => review.product.id === product.id);
+      return reviews.getAllByProductId(product.id);
     }
   }
 };

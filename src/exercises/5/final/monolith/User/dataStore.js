@@ -1,4 +1,9 @@
-exports.users = [
+exports.users = {
+  getById: userId => usersData.find(user => user.id === userId),
+  getMe: () => usersData[0]
+};
+
+const usersData = [
   {
     id: "1",
     name: "Ada Lovelace",

@@ -1,4 +1,8 @@
-exports.products = [
+exports.products = {
+  getById: productId => productsData.find(product => product.id === productId)
+};
+
+const productsData = [
   {
     id: "1",
     name: "Table",

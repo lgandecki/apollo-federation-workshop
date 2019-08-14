@@ -1,12 +1,12 @@
 exports.resolvers = {
   Query: {
     me(_, __, { users }) {
-      return users[0];
+      return users.getMe();
     }
   },
   User: {
     reviews(user, _, { reviews }) {
-      return reviews.filter(review => review.authorID === user.id);
+      return reviews.getAllByAuthorId(user.id);
     }
   }
 };

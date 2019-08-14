@@ -1,15 +1,15 @@
 exports.resolvers = {
   Query: {
     reviewsForProduct: (_, { productId }, { reviews }) => {
-      return reviews.filter(review => review.product.id === productId);
+      return reviews.getAllByProductId(productId);
     }
   },
   Review: {
     author(review, _, { users }) {
-      return users.find(user => user.id === review.authorID);
+      return users.getById(review.authorID);
     },
     product(review, _, { products }) {
-      return products.find(product => product.id === review.product.id);
+      return products.getById(review.product.id);
     }
   }
 };
