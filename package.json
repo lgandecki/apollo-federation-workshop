@@ -58,6 +58,7 @@
     "apollo-server": "2.8.0",
     "federation-testing-tool": "2.0.0",
     "graphql": "14.4.2",
-    "graphql-tag": "2.10.1"
+    "graphql-tag": "2.10.1",
+    "merge-graphql-schemas": "^1.7.0"
   }
 }
