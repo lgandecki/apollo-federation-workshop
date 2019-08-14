@@ -1,28 +1,10 @@
 const { executeGraphql } = require("federation-testing-tool");
-
-const { mergeTypes, mergeResolvers } = require("merge-graphql-schemas");
 const { gql } = require("apollo-server");
-const { typeDefs: userTypeDefs } = require("./User/typeDefs");
-const { resolvers: userResolvers } = require("./User/resolvers");
-const { typeDefs: reviewTypeDefs } = require("./Review/typeDefs");
-const { resolvers: reviewResolvers } = require("./Review/resolvers");
-const { resolvers: productResolvers } = require("./Product/resolvers");
-const { typeDefs: productTypeDefs } = require("./Product/typeDefs");
 
-const { users } = require("./User/dataStore");
-const { reviews } = require("./Review/dataStore");
-const { products } = require("./Product/dataStore");
+const { typeDefs } = require("./typeDefs");
+const { resolvers } = require("./resolvers");
+const { context } = require("./context");
 
-const typeDefs = gql`
-  ${mergeTypes([userTypeDefs, reviewTypeDefs, productTypeDefs])}
-`;
-
-const resolvers = mergeResolvers([
-  userResolvers,
-  reviewResolvers,
-  productResolvers
-]);
-const context = { users, reviews, products };
 const service = { typeDefs, resolvers };
 
 test("Request User name", async () => {
@@ -38,7 +20,6 @@ test("Request User name", async () => {
     service,
     context
   });
-
   expect(result).toEqual({ data: { me: { name: "Ada Lovelace" } } });
 });
 
