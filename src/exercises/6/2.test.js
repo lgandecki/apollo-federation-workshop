@@ -1,14 +1,12 @@
-// 5/1.test.js
+// 6/2.test.js
 
 // !!! Comment out line number 5 below and uncomment the line number 6 to start the exercise.
 
 const exerciseStarted = false; // 🐨
 // const exerciseStarted = true; // 🐨
 
-// For this exercise you have to fill the:
-// 1) ./toBeChanged/accounts/dataStore.js
-// 2) ./toBeChanged/accounts/typeDefs.js
-// 3) ./toBeChanged/accounts/resolvers.js
+// For this exercise you have to change the:
+// 1) ./toBeChanged/User/typeDefs.js
 
 // Start by copying and pasting them from the existing monolith (./toBeChanged/monolith/User).
 // DO NOT OVERWRITE THEM  (using cp command for example),
@@ -17,7 +15,7 @@ const exerciseStarted = false; // 🐨
 // Do not change anything in the lines below!
 //
 //
-const { accounts } = exerciseStarted
+const { accounts, monolith } = exerciseStarted
   ? require("./toBeChanged")
   : require("./final");
 
@@ -26,16 +24,29 @@ const { gql } = require("apollo-server");
 const td = require("testdouble");
 
 accounts.context = td.object(accounts.context);
-const services = [{ accounts }];
+monolith.context = td.object(monolith.context);
+const services = [{ monolith }, { accounts }];
 
-test("Can request User name from the accounts service working as a standalone GraphQL service", async () => {
-  const AUTHOR = { name: "some name" };
+test("Can request User reviews by connecting data between the accounts service and the monolith", async () => {
+  const AUTHOR_ID = "1";
+  const AUTHOR = { name: "some name", id: AUTHOR_ID };
+
   td.when(accounts.context.users.getMe()).thenReturn(AUTHOR);
+
+  td.when(accounts.context.users.getById(AUTHOR_ID)).thenReturn(AUTHOR);
+
+  const REVIEWS_ARRAY = [{ body: "some body" }];
+  td.when(monolith.context.reviews.getAllByAuthorId(AUTHOR_ID)).thenReturn(
+    REVIEWS_ARRAY
+  );
 
   const query = gql`
     query {
       me {
         name
+        reviews {
+          body
+        }
       }
     }
   `;
@@ -44,5 +55,7 @@ test("Can request User name from the accounts service working as a standalone Gr
     services
   });
 
-  expect(result).toEqual({ data: { me: AUTHOR } });
+  expect(result.errors && result.errors[0]).toBeUndefined();
+  expect(result.data.me.name).toEqual(AUTHOR.name);
+  expect(result.data.me.reviews).toEqual(REVIEWS_ARRAY);
 });
