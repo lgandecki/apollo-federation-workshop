@@ -4,6 +4,15 @@ Hello, welcome to the workshop. Feel free to open github issues if you have any 
 
 If you or your company is interested in having me do the workshop for you, please contact me at lgandecki@thebrain.pro .
 
+## Prerequisites
+
+Take 5 minutes and read through these two pages out of the Apollo Documentation itself. Don't worry if not everything is clear, but you should get a basic understanding of the reasoning behind the Federation concept.
+
+[Federation Introduction](https://www.apollographql.com/docs/apollo-server/federation/introduction/)
+
+[Federation - Separation of concerns](https://www.apollographql.com/docs/apollo-server/federation/concerns/)
+
+
 
 ## System Requirements
 
